@@ -1,0 +1,13 @@
+venv/
+.env
+__pycache__/
+*.pyc
+chroma_db/
+.streamlit/
+offline_pkgs/
+brain/
+.agents/
+.agent/
+_agents/
+_agent/
+*.log
