@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.2.0] - 2026-05-22
+### Added
+- **Release Scripts**: Added Windows `.bat` scripts for easy local installation, downloading models, starting the bot, and ingesting documents.
+- **Offline Configuration**: Added `.gitignore` configurations for local vector databases and backups.
+- Officially tagged and released `v2.2.0`.
+
+
 ## [v2.1.0] - 2026-05-21
 ### Added
 - **Mistral Large for Evaluation**: Switched the Ragas LLM judge in `evaluate.py` to use Mistral Large via the official API for more accurate metric scoring.
