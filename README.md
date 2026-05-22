@@ -1,6 +1,6 @@
 # Готовая к продакшену RAG Система
 
-![Version](https://img.shields.io/badge/version-v2.2.0-blue.svg)
+![Version](https://img.shields.io/badge/version-v2.3.0-blue.svg)
 
 <div align="center">
   <a href="https://notebooklm.google.com/notebook/5dd88fdb-7346-4924-979b-32326fcd9c67">

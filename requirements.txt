@@ -8,6 +8,16 @@ chromadb
 python-dotenv
 beautifulsoup4
 markdown
+langchain
+langchain-community
+langchain-chroma
+langchain-huggingface
+sentence-transformers
+pypdf
+chromadb
+python-dotenv
+beautifulsoup4
+markdown
 streamlit
 yandexcloud
 langfuse
@@ -15,3 +25,4 @@ ragas
 langchain-ollama
 rank_bm25
 python-docx
+langchain-openai

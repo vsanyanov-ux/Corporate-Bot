@@ -101,12 +101,35 @@ def query_system(question: str, session_id: str = None, model_name: str = None, 
         from langchain_core.output_parsers import StrOutputParser
 
         def get_llm(model="qwen3.5:9b"):
+            if "mistral" in model.lower():
+                from langchain_openai import ChatOpenAI
+                import os
+                
+                # Use standard OpenAI env vars which point to Mistral in .env
+                api_key = os.getenv("OPENAI_API_KEY")
+                base_url = os.getenv("OPENAI_BASE_URL")
+                
+                # Fallback to Aitunnel if OPENAI is missing
+                if not api_key:
+                    api_key = os.getenv("AITUNNEL_API_KEY")
+                    base_url = os.getenv("AITUNNEL_BASE_URL")
+                    
+                return ChatOpenAI(
+                    model=model,
+                    temperature=0.0,
+                    api_key=api_key,
+                    base_url=base_url
+                )
+            
             return ChatOllama(model=model, temperature=0.0)
 
         primary_model = model_name if model_name else "qwen3.5:9b"
         
         try:
-            print(f"Connecting to local LLM: {primary_model} via Ollama...")
+            if "mistral" in primary_model.lower():
+                print(f"Connecting to online LLM: {primary_model} via API...")
+            else:
+                print(f"Connecting to local LLM: {primary_model} via Ollama...")
             llm = get_llm(primary_model)
             
             retriever_placeholder = store.as_retriever(search_kwargs={"k": 10})

@@ -21,13 +21,13 @@ if "langfuse_session_id" not in st.session_state:
 st.sidebar.title("🛠️ Settings")
 selected_model = st.sidebar.selectbox(
     "Select LLM Model",
-    options=["qwen3.5:9b", "qwen2.5:14b", "llama3"],
+    options=["qwen3.5:9b", "qwen2.5:14b", "llama3", "mistral-large-latest"],
     index=0,
-    help="Models are requested locally from Ollama."
+    help="Models are requested locally from Ollama or online via API."
 )
 
-st.title("📚 Corporate Bot (Local RAG)")
-st.markdown(f"Задайте вопрос по корпоративным документам. Модель: **{selected_model}** (Ollama Local).")
+st.title("📚 Corporate Bot (Local & Online RAG)")
+st.markdown(f"Задайте вопрос по корпоративным документам. Модель: **{selected_model}**.")
 
 # Display Chat History
 for message in st.session_state.messages:

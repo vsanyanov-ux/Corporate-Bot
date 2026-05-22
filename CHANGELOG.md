@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.3.0] - 2026-05-22
+### Added
+- **Unified LLM Interface**: Added dynamic switching between Local Ollama models (`qwen3.5:9b`, `qwen2.5:14b`, `llama3`) and Online API models (`mistral-large-latest`) directly from the UI.
+- **API Fallbacks**: Implemented fallback logic to switch between standard OpenAI and Aitunnel endpoints when using Mistral.
+- Added `langchain-openai` to dependencies.
+
 ## [v2.2.0] - 2026-05-22
 ### Added
 - **Release Scripts**: Added Windows `.bat` scripts for easy local installation, downloading models, starting the bot, and ingesting documents.
