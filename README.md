@@ -145,4 +145,10 @@ graph TD
         eval --> mistral_judge(["Mistral Large (Судья)"]):::llm
         eval -.-> github["GitHub Actions CI/CD"]:::ui
     end
+
+    %% Deployment Methods
+    subgraph "Развертывание (Deployment)"
+        bat[/"Windows .bat скрипты"/]:::config -.-> app
+        docker[/"Docker Compose"/]:::config -.-> app
+    end
 ```
